@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'MuseoSansCyrl';
+    src: url('../fonts/MuseoSansCyrl100.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/MuseoSansCyrl100.woff') format('woff') /* Pretty Modern Browsers */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "MuseoSansCyrl" , "Arial" , sans-serif;
+    font-size: 15px;
+    height: 5000px;
+}
+.wrapper{
+    position: fixed;
+    margin: 0 auto;
+}
+#header{
+    position:fixed;
+    left:180px;
+}
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+.logo{
+    float: left;
+}
+.menu{
+    list-style-type:none;
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    float: right;
+    margin-top: 50px;
+}
+.menu li a{
+    text-decoration: none;
+}
+.menu li a:hover{
+    color: black;
+    font-size: 18px;
+}
