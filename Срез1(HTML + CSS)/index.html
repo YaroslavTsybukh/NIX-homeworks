@@ -95,7 +95,7 @@
                 </article>
             </div>
         </section>
-        <section id="">
+        <section id="accordianSection">
             <div class="container">
                 <div class="accordian">
                     <ul>
@@ -141,6 +141,23 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </section>
+        <section id="formSection">
+            <div class="container">
+                <h2>Форма для внесения данных</h2>
+                <form action="#">
+                    <fieldset>
+                        <input type="text" pattern="^[А-Яа-яЁё\s]+$" placeholder="Имя" name="name" required>
+                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="date" name="date" required>
+                        <input type="file" name="file">
+                        <div>
+                            <button type="submit">Отправить</button>
+                            <button type="reset">Очистить</button>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
         </section>
     </main>

@@ -61,7 +61,6 @@ main{
 }
 
 /*Slider*/
-
 #sliderSection{
     height: 450px;
 }
@@ -149,7 +148,8 @@ table{
 
 /*Accordian*/
 .accordian {
-    width: 805px; height: 320px;
+    width: 805px;
+    height: 320px;
     overflow: hidden;
     margin: 100px auto;
 }
@@ -162,7 +162,6 @@ table{
     box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.5s;
 }
-
 .accordian ul:hover li {
     width: 40px;
 }
@@ -204,6 +203,46 @@ table{
 .image_title + div > p{
     font-weight: bold;
     margin: 17px;
+}
+
+/*Form*/
+fieldset{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+    border: none;
+}
+form > fieldset >  input{
+    margin-top: 30px;
+    height: 30px;
+}
+fieldset div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+fieldset input:valid{
+    border: 2px double blue;
+}
+fieldset input:invalid{
+    border: 2px dotted red;
+}
+button{
+    width: 130px;
+    height: 30px;
+}
+button:hover{
+    width: 80px;
+    height: 80px;
+    transition: 1s ease;
+    border-radius: 50%;
+}
+#formSection{
+    background: url("../img/formBackground.jpg") no-repeat center top / cover;
+    height: 500px;
+    padding-top: 70px;
+    opacity: 0.7;
 }
 
 
