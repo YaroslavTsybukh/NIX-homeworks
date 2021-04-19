@@ -15,7 +15,6 @@ label, a{
 body{
     font-family: "MuseoSansCyrl" , "Arial" , sans-serif;
     font-size: 15px;
-    height: 5000px;
 }
 #header{
     position:fixed;
@@ -245,6 +244,15 @@ button:hover{
     opacity: 0.7;
 }
 
+/*Footer*/
+footer{
+    height: 40px;
+    background: linear-gradient(to top, #fefcea, #f1da36);
+}
+footer p {
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
 
 
 
