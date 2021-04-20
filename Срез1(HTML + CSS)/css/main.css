@@ -16,12 +16,15 @@ body{
     font-family: "MuseoSansCyrl" , "Arial" , sans-serif;
     font-size: 15px;
 }
+p,h2,h3{
+    color: black;
+}
 #header{
     position:fixed;
     left: 0;
     right: 0;
     background: #b22222;
-    z-index: 1;
+    z-index: 3;
 }
 .container{
     width: 1170px;
@@ -32,11 +35,18 @@ body{
 }
 .menu{
     list-style-type:none;
-    display: flex;
-    justify-content: space-around;
     width: 500px;
     float: right;
-    margin-top: 50px;
+    margin-top: 35px;
+}
+.menu li {
+    float: left;
+}
+.menu li:first-child,.menu li:nth-child(2),.menu li:nth-child(3){
+    margin-right: 10px;
+}
+.menu li:last-child{
+    margin: 0px;
 }
 .menu li a{
     text-decoration: none;
@@ -46,22 +56,47 @@ body{
     color: white;
     font-size: 18px;
 }
-header::after{
-    content:"";
-    display: block;
-    width: 500px;
-    height: 2px;
-    background: black;
-    margin-top: 100px;
-}
-
 main{
     padding-top: 130px;
+}
+section{
+    position: relative;
+    z-index: 2;
+}
+
+/*Progress*/
+.example-post {
+    position: relative;
+    padding: 0;
+    color: #7f8b90;
+    border-top: 1px dotted #aaa;
+    border-bottom: 1px dotted #aaa;
+}
+.example-post:before {
+    content: "";
+    display: block;
+    background: linear-gradient(to right top, #CDDC39 0%, #03A9F4 50%, #e6f0f5 50%);
+    height: calc(100% - 100vh + 78px);
+    width: 100%;
+    position: absolute;
+    top: 72px;
+    left: 0;
+}
+.example-post:after {
+    content: "";
+    display: block;
+    background: #e6f0f5;
+    height: calc(100vh - 6px);
+    width: 100%;
+    position: fixed;
+    bottom: -82px;
+    left: 0;
+    z-index: 1;
 }
 
 /*Slider*/
 #sliderSection{
-    height: 450px;
+    height: 300px;
 }
 h2 {
     text-align: center;
@@ -206,8 +241,6 @@ table{
 
 /*Form*/
 fieldset{
-    display: flex;
-    flex-direction: column;
     width: 300px;
     margin: 0 auto;
     border: none;
@@ -215,11 +248,13 @@ fieldset{
 form > fieldset >  input{
     margin-top: 30px;
     height: 30px;
+    width: 100%;
 }
 fieldset div{
-    display: flex;
-    justify-content: space-around;
     margin-top: 30px;
+}
+div > button:last-child{
+    float: right;
 }
 fieldset input:valid{
     border: 2px double blue;
@@ -246,8 +281,10 @@ button:hover{
 
 /*Footer*/
 footer{
-    height: 40px;
+    height: 60px;
     background: linear-gradient(to top, #fefcea, #f1da36);
+    position: relative;
+    z-index: 1;
 }
 footer p {
     padding: 20px 0px 20px 0px;
