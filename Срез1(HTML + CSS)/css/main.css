@@ -16,8 +16,8 @@ body{
     font-family: "MuseoSansCyrl" , "Arial" , sans-serif;
     font-size: 15px;
 }
-p,h2,h3{
-    color: black;
+p,h2,h3,td,th{
+    color: #000000;
 }
 #header{
     position:fixed;
@@ -30,17 +30,19 @@ p,h2,h3{
     width: 1170px;
     margin: 0 auto;
 }
-.logo{
-    float: left;
-}
 .menu{
     list-style-type:none;
     width: 500px;
     float: right;
     margin-top: 35px;
 }
-.menu li {
+.menu li,.logo{
     float: left;
+}
+#header > div > h1 {
+    float: left;
+    margin: 24px 0px 0px 50px;
+    color: #ffffff;
 }
 .menu li:first-child,.menu li:nth-child(2),.menu li:nth-child(3){
     margin-right: 10px;
@@ -53,7 +55,7 @@ p,h2,h3{
     color: #ffA500
 }
 .menu li a:hover{
-    color: white;
+    color: #ffffff;
     font-size: 18px;
 }
 main{
@@ -64,7 +66,7 @@ section{
     z-index: 2;
 }
 
-/*Progress*/
+/*ProgressBar*/
 .example-post {
     position: relative;
     padding: 0;
@@ -202,21 +204,21 @@ table{
 .accordian ul li:hover {
     width: 640px;
 }
-.image_title {
+.imageTitle {
     background: rgba(0, 0, 0, 1);
     position: absolute;
     left: 0;
     bottom: 0;
     width: 640px;
 }
-.image_title a {
+.imageTitle a {
     display: block;
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     padding: 23px 0px 37px 0px;
 }
-.image_title + div{
+.imageTitle + div{
     height: 320px;
 }
 .accordian li:first-child{
@@ -234,7 +236,7 @@ table{
 .accordian li:last-child{
     background-color: #90ee90;
 }
-.image_title + div > p{
+.imageTitle + div > p{
     font-weight: bold;
     margin: 17px;
 }
@@ -257,10 +259,10 @@ div > button:last-child{
     float: right;
 }
 fieldset input:valid{
-    border: 2px double blue;
+    border: 2px double #0000ff;
 }
 fieldset input:invalid{
-    border: 2px dotted red;
+    border: 2px dotted #ff0000;
 }
 button{
     width: 130px;
