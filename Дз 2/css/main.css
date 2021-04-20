@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 1000px;
+}
+.container{
+    width: 1170px;
+    margin: auto;
+}
+article > p{
+    margin:10px 0px 10px 0px
+}
+div > img{
+    width: 80px;
+    float: left;
+}
+.modal{
+    border: 1px solid black;
+    width: 400px;
+    height: 140px;
+    margin: auto;
+    position: fixed;
+    top: calc(50% - 70px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+}
+fieldset{
+    width: 240px;
+    border: none;
+}
+legend:first-child,input + button{
+    margin: 10px 0px;
+}
+fieldset > label{
+    margin-right: 20px;
+}
+fieldset > label[for = "password"]{
+    margin-right: 12px;
+}
+input{
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 3px 3px 3px 3px;
+}
+input[id = "password"]{
+    margin-top: 5px;
+}
+article{
+    position: relative;
+    z-index: -1;
+}
+article + div{
+    background: blue;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    opacity: 0.6;
+}
