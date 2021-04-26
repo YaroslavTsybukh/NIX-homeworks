@@ -1,0 +1,121 @@
+.container{
+    width: 1170px;
+    margin: auto;
+}
+
+/*Задание 1*/
+img[alt="firstImage"]{
+    width: 100px;
+    float: left;
+    margin-right: 20px;
+}
+img[alt="lastImage"]{
+    width: 100px;
+    float: right;
+    margin-left: 20px;
+}
+h1+div{
+    border: 2px dotted #808080;
+    padding: 20px 60px 20px 20px;
+    width:800px;
+    margin:auto;
+}
+
+/*Задание 2*/
+.first-image,.second-image{
+    width: 800px;
+    margin: auto;
+    border: 2px dotted #808080;
+    position: relative;
+    height: 600px;
+}
+.first-image div:first-child,.second-image div:first-child{
+    width: 400px;
+    height: 400px;
+    background-color: #3cb371;
+    position: absolute;
+    top:calc(50% - 200px);
+    left:calc(50% - 200px)
+}
+.first-image div:nth-child(2),.first-image div:nth-child(3){
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+    position: absolute;
+    top: calc(30% - 50px);
+    left: calc(30% - 20px);
+}
+.first-image div:nth-child(3){
+    top: calc(80% - 90px);
+    left: calc(71% - 70px);
+}
+.second-image{
+    margin-top: 100px;
+    position: relative;
+}
+.second-image div:first-child{
+    border-radius: 50%;
+}
+.second-image div:nth-child(2), .second-image div:nth-child(3),.second-image div:nth-child(4){
+    width: 70px;
+    height: 70px;
+    top: calc(40% - 60px);
+    left: calc(40% - 55px);
+    background-color: #ffffff;
+    position: absolute;
+    border-radius: 50%;
+}
+.second-image div:nth-child(3){
+    left: calc(66% - 60px);
+}
+.second-image div:nth-child(4){
+    border-radius: 0;
+    left: calc(50% - 35px);
+    top: calc(50% - 35px);
+}
+.second-image div:last-child{
+    width: 170px;
+    height: 15px;
+    top: calc(80% - 80px);
+    left: calc(50% - 85px);
+    background-color: #ffffff;
+    position: absolute
+}
+
+/*Задание 3*/
+.taskThree{
+    height: 560px;
+}
+.taskThree ul{
+    list-style-type: none;
+}
+.taskThree ul li{
+    border: 1px solid #000000;
+    width: 200px;
+    height: 250px;
+    float: left;
+    margin: 10px 10px 0 0;
+    text-align: center;
+}
+.taskThree ul li img{
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+}
+img + p{
+    margin-top: 50px;
+}
+
+/*Задание 4*/
+
+/*Не работает потому , что position:absolute даёт данному елементу display:block.*/
+
+.arrow {
+    position: absolute;
+    height: 60px;
+    border: 1px solid black;
+    font-size: 28px;
+    line-height: 60px;
+}
+
+
