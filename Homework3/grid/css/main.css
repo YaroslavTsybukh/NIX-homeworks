@@ -66,7 +66,7 @@
 .blockThree div{
     width: 100px;
     height: 100px;
-    border: 2px solid #000000
+    border: 2px solid #000000;
 }
 .blockThree div:nth-child(4){
     grid-column: 1/2;
@@ -124,6 +124,7 @@
     height: 50px;
     background-color: #888888;
     border: 2px solid #808080;
+    border-radius: 5px;
 }
 .blockFour div:first-child{
     grid-column: span 2
@@ -148,6 +149,7 @@
     background-color: #888888;
     color: #ffffff;
     padding: 20px;
+    border-radius: 5px;
 }
 .blockFive div:first-child{
     grid-column: span 2;
