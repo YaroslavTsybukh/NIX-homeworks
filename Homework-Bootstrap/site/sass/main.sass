@@ -1,6 +1,9 @@
 @import "fonts"
+$white: #ffffff
+$red: #ff0000
 %marginTop
   margin-top: 20px
+
 *
   padding: 0
 body
@@ -16,31 +19,55 @@ header
 h1
   font-size: 25px
   text-align: center
+  color: $white
   @extend %marginTop
 nav
-  @extend %marginTop
+  margin-top: 10px
+.navbar-light .navbar-nav .nav-link
+  color: $white
+.bg-light
+  background-color: #a51b1b !important
 img[src="img/logo.png"]
   width: 100%
-
-/*Progress Bar*/
-.progress,h2
-  margin-top: 75px
+.progress
+  margin-bottom: 20px
+#slider-section
+  padding-top: 110px
 
 /*Carousel*/
+.block-slider
+  box-shadow: 10px 10px 10px rgba(149, 165, 166, 1)
 .carousel
-  margin-top: 50px
-.carousel-indicators
-  .active
-    background-color: red
+  margin: 50px 0 50px 0
+  &-item
+    height: 360px
+  &-indicators
+    bottom: -11px
+    .active
+      background-color: $red
 img[src="img/first.jpg"] + div,img[src="img/second.jpg"] + div,img[src="img/third.jpg"]  + div
   background: #000000
   position: relative
-  bottom: 60px;
-  height: 30px;
+  bottom: 60px
+  height: 30px
   text-align: center
   p
-    color: #fff3cd
-.carousel-indicators
-  bottom: 20px
+    color: $white
 .carousel-control-prev,.carousel-control-next
-  height: 93%;
+  height: 93%
+
+/*Form*/
+form
+  border: 1px solid #000000
+  padding: 24px
+  @extend .carousel
+input:valid
+  border: 2px solid green
+.form-button
+  display: flex
+  justify-content: space-evenly
+.modal-dialog
+  top: calc(50% - 150px)
+  position: relative
+
+
