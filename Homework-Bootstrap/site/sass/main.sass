@@ -1,9 +1,15 @@
 @import "fonts"
+@import "additionPage"
+
 $white: #ffffff
 $red: #ff0000
+$green: #008000
+$blue: #0000ff
 %marginTop
   margin-top: 20px
-
+$correct-color: (input: 2px solid $green, textarea: 2px solid $green)
+$state-none: (hover: none , focus: none)
+$modifier-color: (red: $red , blue: $blue , green: $green)
 *
   padding: 0
 body
@@ -31,10 +37,20 @@ img[src="img/logo.png"]
   width: 100%
 .progress
   margin-bottom: 20px
+  @media screen and (max-width: 768px)
+    &
+      margin-top: 10px
 #slider-section
-  padding-top: 110px
+  padding-top: 140px
 
 /*Carousel*/
+h2:after
+  content: ""
+  display: block
+  background-color: $red
+  height: 2px
+  width: 60px
+  margin-top: 10px
 .block-slider
   box-shadow: 10px 10px 10px rgba(149, 165, 166, 1)
 .carousel
@@ -43,6 +59,7 @@ img[src="img/logo.png"]
     height: 360px
   &-indicators
     bottom: -11px
+    z-index: 1
     .active
       background-color: $red
 img[src="img/first.jpg"] + div,img[src="img/second.jpg"] + div,img[src="img/third.jpg"]  + div
@@ -60,14 +77,54 @@ img[src="img/first.jpg"] + div,img[src="img/second.jpg"] + div,img[src="img/thir
 form
   border: 1px solid #000000
   padding: 24px
+  @extend .block-slider
   @extend .carousel
-input:valid
-  border: 2px solid green
+@each $correct , $color in $correct-color
+  #{$correct}:valid
+    border: $color
+input[type="file"]
+  border: none
 .form-button
   display: flex
   justify-content: space-evenly
-.modal-dialog
-  top: calc(50% - 150px)
-  position: relative
+.modal
+  &-dialog
+    top: calc(50% - 150px)
+    position: relative
 
+/*Collapse*/
+.accordion
+  @extend .carousel
+  border: 2px solid #6c6969
+.btn-link
+  text-decoration: none
+  @each $state , $none in $state-none
+    &:#{$state}
+      text-decoration: $none
+      color: $red
+      transition: 0.8s ease-out
+    &:#{$state}
+      text-decoration: $none
+      box-shadow: none
+button[data-toggle="popover"]
+  @extend .carousel
+  margin-top: 0
+.popover
+  z-index: 2
+  width: 216px;
+  height: 100px;
 
+/*Footer*/
+footer
+  height: auto
+  background: linear-gradient(to top, #fefcea, #f1da36)
+.line
+  height: 2px
+  background-color: red
+  @extend %marginTop
+.footer-link
+  color: #000000
+  @each $modifier , $color in $modifier-color
+    &_#{$modifier}:hover
+      color: $color
+      transition: 1s ease-out
