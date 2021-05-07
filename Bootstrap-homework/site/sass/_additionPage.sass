@@ -5,14 +5,14 @@ $number-height: (first-row: 150px , second-row: 150px , third-row:150px)
   margin-bottom: 20px
 
 #section-blocks
-  height: 100vh
+  margin-bottom: 80px
   padding-top: 140px
   @media screen and (max-width: 768px)
     &
       padding-top: 200px
   @media screen and (max-width: 576px)
     &
-      padding-top: 300px
+      padding-top: 162px
 
 @each $number , $height  in $number-height
   .#{$number}__block

@@ -35,6 +35,7 @@ nav
   background-color: #a51b1b !important
 img[src="img/logo.png"]
   width: 100%
+  height: 50px
 .progress
   margin-bottom: 20px
   @media screen and (max-width: 768px)
@@ -42,6 +43,12 @@ img[src="img/logo.png"]
       margin-top: 10px
 #slider-section
   padding-top: 140px
+  @media screen and (max-width: 768px)
+    &
+      padding-top: 220px
+  @media screen and (max-width: 576px)
+    &
+      padding-top: 153px
 
 /*Carousel*/
 h2:after
@@ -57,9 +64,25 @@ h2:after
   margin: 50px 0 50px 0
   &-item
     height: 360px
+    @media screen and (max-width: 1200px)
+      &
+        height: 300px
+    @media screen and (max-width: 992px)
+      &
+        height: 380px
+    @media screen and (max-width: 768px)
+      &
+        height: 340px
+  &-item > img
+    @media screen and (max-width: 576px)
+      height: 50vh
   &-indicators
     bottom: -11px
     z-index: 1
+    @media screen and (max-width: 992px)
+      bottom: -11px
+    @media screen and (max-width: 768px)
+      bottom: -9px
     .active
       background-color: $red
 img[src="img/first.jpg"] + div,img[src="img/second.jpg"] + div,img[src="img/third.jpg"]  + div
@@ -68,10 +91,15 @@ img[src="img/first.jpg"] + div,img[src="img/second.jpg"] + div,img[src="img/thir
   bottom: 60px
   height: 30px
   text-align: center
+  @media screen and (max-width: 992px)
+    bottom: 77px
+  @media screen and (max-width: 992px)
+    bottom: 60px
   p
     color: $white
 .carousel-control-prev,.carousel-control-next
   height: 93%
+
 
 /*Form*/
 form
@@ -111,8 +139,8 @@ button[data-toggle="popover"]
   margin-top: 0
 .popover
   z-index: 2
-  width: 216px;
-  height: 100px;
+  width: 216px
+  height: 100px
 
 /*Footer*/
 footer
