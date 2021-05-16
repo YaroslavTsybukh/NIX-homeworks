@@ -1,3 +1,4 @@
+//Popover
 $(function () {
     $('[data-toggle="popover"]').popover({
         'placement': 'right',
@@ -13,3 +14,4 @@ $(function () {
         $(".close").off("click", hideHandler)
     })
 })
+
