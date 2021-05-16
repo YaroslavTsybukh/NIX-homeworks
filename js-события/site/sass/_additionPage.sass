@@ -1,0 +1,27 @@
+$red: #ff0000
+$white: #ffffff
+$number-height: (first-row: 150px , second-row: 150px , third-row:150px)
+@mixin marginBottom
+  margin-bottom: 20px
+
+#section-blocks
+  margin-bottom: 80px
+  padding-top: 140px
+  @media screen and (max-width: 768px)
+    &
+      padding-top: 200px
+  @media screen and (max-width: 576px)
+    &
+      padding-top: 162px
+
+@each $number , $height  in $number-height
+  .#{$number}__block
+    height: $height
+    background-color: $red
+.first-row
+  @include marginBottom
+.second-block__elem
+  height: 50px
+  background-color: $white
+.second-row
+  @include marginBottom
