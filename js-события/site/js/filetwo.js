@@ -1,24 +1,24 @@
 //Задание 1
-// let blockFirst = document.querySelector(".block-first")
-// let pause = false
-// blockFirst.onclick = function() {
-//     pause = false
-//     const container = document.querySelector("#firstTask .container ").clientWidth
-//     function animation() {
-//         blockFirst.style.left = parseInt(blockFirst.style.left || 0) + 10 + "px"
-//         if (parseInt(blockFirst.offsetWidth + parseInt(blockFirst.style.left)) > container) {
-//             blockFirst.style.left = 0
-//         }
-//         if(!pause){
-//             requestAnimationFrame(animation)
-//         }
-//     }
-//     requestAnimationFrame(animation)
-// }
-// let buttonFirst = document.querySelector(".button-first")
-//     buttonFirst.addEventListener("click",function(e){
-//         pause = true
-//     } )
+let blockFirst = document.querySelector(".block-first")
+let pause = false
+blockFirst.onclick = function() {
+    pause = false
+    const container = document.querySelector("#firstTask .container ").clientWidth
+    function animation() {
+        blockFirst.style.left = parseInt(blockFirst.style.left || 0) + 10 + "px"
+        if (parseInt(blockFirst.offsetWidth + parseInt(blockFirst.style.left)) > container) {
+            blockFirst.style.left = 0
+        }
+        if(!pause){
+            requestAnimationFrame(animation)
+        }
+    }
+    requestAnimationFrame(animation)
+}
+let buttonFirst = document.querySelector(".button-first")
+    buttonFirst.addEventListener("click",function(e){
+        pause = true
+    } )
 
 //Задание 2
 //     let link = document.querySelector("a[href='#']")

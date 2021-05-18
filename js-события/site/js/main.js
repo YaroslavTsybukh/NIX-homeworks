@@ -4,7 +4,7 @@ $(function () {
         'placement': 'right',
         'template': '<div class="popover" role="tooltip"><div class="arrow"></div><span class="close btn float-right pop-close">&times;</span><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
     })
-    const hideHandler = function(){
+    const hideHandler = function () {
         $('[data-toggle="popover"]').popover("hide")
     }
     $('[data-toggle="popover"]').on('shown.bs.popover', function () {
@@ -15,7 +15,7 @@ $(function () {
     })
 })
 //Задание 1
-window.addEventListener("scroll" , function(){
+window.addEventListener("scroll", function () {
     let scrollBar = document.querySelector(".progress-bar")
     let scroll = document.documentElement.scrollTop
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight
@@ -23,43 +23,70 @@ window.addEventListener("scroll" , function(){
     scrollBar.style.width = scrolled + "%"
 })
 //Задание 2
-let buttonYes = document.querySelector(".btn-success")
 let firstInput = document.querySelector("#exampleInputName1")
 let secondInput = document.querySelector("#exampleInputEmail1")
 let textArea = document.querySelector("#exampleFormControlTextarea1")
-const buttonModal = document.querySelector("button[data-toggle='modal']")
-const formControls = document.querySelectorAll(".form-control")
+const buttonModal = document.querySelector(".form-button button.btn-primary")
+let formErrors = {}
 
-    for(let elem of formControls){
-        elem.addEventListener("change",function(e){
-            const firstElem = firstInput.value
-            const secondElem = secondInput.value
-            const thirdElem = textArea.value
-            if(e.target.name == "name"){
-                console.log()
-            }
-            if(firstElem && secondElem && thirdElem){
-                buttonModal.disabled = false
-            }else{
-                buttonModal.disabled = true
-            }
-
-        })
+function setDisabledButton() {
+    if (firstInput && secondInput && textArea && !Object.values(formErrors).length) {
+        buttonModal.disabled = false
+    } else {
+        buttonModal.disabled = true
     }
-    firstInput.addEventListener("input",function (e) {
+}
 
-    })
-    if(firstInput.value == "number" || firstInput.value == ""){
-        alert("Введите правильные данные")
-    }else{
-
+function validateInput(validate, error, field) {
+    if (validate) {
+        formErrors[field] = "error message"
+        error.textContent = formErrors[field]
+    } else {
+        error.textContent = ""
+        delete formErrors[field]
     }
-localStorage.setItem("test", firstInput.value )
-localStorage.setItem("testTwo", secondInput.value)
-localStorage.setItem("testThree", textArea.value)
-    buttonYes.addEventListener("click" , function(e){
-         window.location="alert.html"
-    })
+}
+
+firstInput.addEventListener('input', (e) => {
+    const validate = e.target.value.split("").some(latter =>  latter.trim() === "" ? false : !isNaN(latter))
+    const error = e.target.closest(".form-group").querySelector('.text-danger')
+    const name = e.target.getAttribute('name')
+
+    validateInput(validate, error, name)
+    setDisabledButton()
+})
+
+secondInput.addEventListener('input', (e) => {
+    const validate = e.target.value.trim().length <= 3
+    const error = e.target.closest(".form-group").querySelector('.text-danger')
+    const name = e.target.getAttribute('name')
+
+    validateInput(validate, error, name)
+    setDisabledButton()
+})
+
+textArea.addEventListener('input', (e) => {
+    const validate = e.target.value.trim().length <= 3
+    const error = e.target.closest(".form-group").querySelector('.text-danger')
+    const name = e.target.getAttribute('name')
+
+    validateInput(validate, error, name)
+    setDisabledButton()
+})
+
+document.querySelector("#form").addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    localStorage.setItem("data", JSON.stringify({name: firstInput.value, email:secondInput.value, message: textArea.value}))
+
+    buttonModal.setAttribute("data-toggle", 'modal')
+    buttonModal.click()
+    buttonModal.removeAttribute('data-toggle');
+})
+
+document.querySelector(".modal-footer .btn-success").addEventListener('click', ()=>{
+    window.location.href = "alert.html"
+})
 
 //Задание 3
 const check = document.querySelector('#check');
@@ -85,18 +112,19 @@ check.addEventListener('change', () => {
     menuElement.classList.toggle("dark-toggler")
 });
 //Задание 4
-document.addEventListener("copy",function(e){
+document.addEventListener("copy", function (e) {
     e.preventDefault()
     alert("Копирование запрещено")
-    })
-    // document.addEventListener("contextmenu",function(e){
-    //     e.preventDefault()
-    // })
-document.addEventListener("keydown", function(e){
-    if(e.code == "KeyU" && (e.ctrlKey || e.metaKey) ){
+})
+// document.addEventListener("contextmenu",function(e){
+//     e.preventDefault()
+// })
+document.addEventListener("keydown", function (e) {
+    if (e.code == "KeyU" && (e.ctrlKey || e.metaKey)) {
         e.preventDefault()
     }
 })
+
 //Задание 5
 function inactivityTime() {
     let time;
@@ -108,42 +136,45 @@ function inactivityTime() {
 
     function resetTimer() {
         clearTimeout(time);
-        time = setTimeout(() =>{
+        time = setTimeout(() => {
             let answer = confirm("Вы еще здесь?")
-            if(answer !== true){
+            if (answer !== true) {
                 window.close()
             }
         }, 300000)
     }
 }
+
 inactivityTime()
+
 //Задание 6
-function nameBrowser(){
+function nameBrowser() {
     let ua = navigator.userAgent;
-    if (ua.search(/Chrome/) > 0) return 'Google Chrome' + " " + parseInt(navigator.appVersion) ;
+    if (ua.search(/Chrome/) > 0) return 'Google Chrome' + " " + parseInt(navigator.appVersion);
     if (ua.search(/Firefox/) > 0) return 'Firefox' + " " + parseInt(navigator.appVersion);
     if (ua.search(/Opera/) > 0) return 'Opera' + " " + parseInt(navigator.appVersion);
     if (ua.search(/Safari/) > 0) return 'Safari' + " " + parseInt(navigator.appVersion);
     if (ua.search(/MSIE/) > 0) return 'Internet Explorer' + " " + parseInt(navigator.appVersion);
     return 'Не определен';
 }
+
 let browser = nameBrowser();
 let browserInfo = document.querySelector(".browsers-info")
-    browserInfo.textContent = browser
+browserInfo.textContent = browser
 //Задание 7
 const anchors = document.querySelectorAll('a[href*="#"]')
-    anchors.forEach(link => {
-        link.addEventListener("click" , function(e){
-            e.preventDefault()
+anchors.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault()
         const href = this.getAttribute("href").substring(1)
-            if(!href) return
+        if (!href) return
         const scrollElem = document.getElementById(href)
-            let topOffset = 100
-            let elem = scrollElem.getBoundingClientRect().top
-            let offsetTop = elem - topOffset
-            window.scrollBy({
-                top:offsetTop,
-                behavior:"smooth"
-            })
+        let topOffset = 100
+        let elem = scrollElem.getBoundingClientRect().top
+        let offsetTop = elem - topOffset
+        window.scrollBy({
+            top: offsetTop,
+            behavior: "smooth"
         })
     })
+})

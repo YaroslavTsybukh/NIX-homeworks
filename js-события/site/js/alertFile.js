@@ -1,3 +1,5 @@
-alert("Имя" + ":" + " " + localStorage.getItem("test") + " " + "\n"
-    + "Email" + ":" + " " + localStorage.getItem("testTwo") + " " + "\n"
-    + "Сообщение" + ":" + " " + localStorage.getItem("testThree"))
+const {name = "", email = "", message = ""} = JSON.parse(localStorage.getItem('data'))
+
+alert("Имя" + ":" + " " + name + " " + "\n"
+    + "Email" + ":" + " " + email + " " + "\n"
+    + "Сообщение" + ":" + " " + message)
