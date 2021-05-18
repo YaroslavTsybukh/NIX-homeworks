@@ -22,31 +22,128 @@ window.addEventListener("scroll" , function(){
     let scrolled = scroll / height * 100
     scrollBar.style.width = scrolled + "%"
 })
+//Задание 2
+let buttonYes = document.querySelector(".btn-success")
+let firstInput = document.querySelector("#exampleInputName1")
+let secondInput = document.querySelector("#exampleInputEmail1")
+let textArea = document.querySelector("#exampleFormControlTextarea1")
+const buttonModal = document.querySelector("button[data-toggle='modal']")
+const formControls = document.querySelectorAll(".form-control")
+
+    for(let elem of formControls){
+        elem.addEventListener("change",function(e){
+            const firstElem = firstInput.value
+            const secondElem = secondInput.value
+            const thirdElem = textArea.value
+            if(e.target.name == "name"){
+                console.log()
+            }
+            if(firstElem && secondElem && thirdElem){
+                buttonModal.disabled = false
+            }else{
+                buttonModal.disabled = true
+            }
+
+        })
+    }
+    firstInput.addEventListener("input",function (e) {
+
+    })
+    if(firstInput.value == "number" || firstInput.value == ""){
+        alert("Введите правильные данные")
+    }else{
+
+    }
+localStorage.setItem("test", firstInput.value )
+localStorage.setItem("testTwo", secondInput.value)
+localStorage.setItem("testThree", textArea.value)
+    buttonYes.addEventListener("click" , function(e){
+         window.location="alert.html"
+    })
+
+//Задание 3
+const check = document.querySelector('#check');
+const header = document.querySelector("header")
+const navBar = document.querySelector(".bg-light")
+const mainTag = document.querySelector("main")
+const headingElement = document.querySelectorAll("h2")
+const accordionElement = document.querySelector(".accordion")
+const formElement = document.querySelector("form")
+const footerElement = document.querySelector("footer")
+const menuElement = document.querySelector(".navbar-toggler")
+
+check.addEventListener('change', () => {
+    header.classList.toggle('dark-header');
+    navBar.classList.toggle('bg-light')
+    mainTag.classList.toggle('dark-main')
+    headingElement.forEach(elem => {
+        elem.classList.toggle("dark-h2")
+    })
+    accordionElement.classList.toggle("dark-accordion")
+    formElement.classList.toggle("dark-form")
+    footerElement.classList.toggle("dark-footer")
+    menuElement.classList.toggle("dark-toggler")
+});
 //Задание 4
 document.addEventListener("copy",function(e){
     e.preventDefault()
     alert("Копирование запрещено")
     })
-document.addEventListener("contextmenu",function(e){
-    e.preventDefault()
-})
+    // document.addEventListener("contextmenu",function(e){
+    //     e.preventDefault()
+    // })
 document.addEventListener("keydown", function(e){
     if(e.code == "KeyU" && (e.ctrlKey || e.metaKey) ){
         e.preventDefault()
     }
 })
 //Задание 5
+function inactivityTime() {
+    let time;
+    window.onload = resetTimer
+    document.onclick = resetTimer
+    document.onpointermove = resetTimer
+    document.onkeypress = resetTimer
+    document.onscroll = resetTimer
 
+    function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(() =>{
+            let answer = confirm("Вы еще здесь?")
+            if(answer !== true){
+                window.close()
+            }
+        }, 300000)
+    }
+}
+inactivityTime()
 //Задание 6
-function get_name_browser(){
+function nameBrowser(){
     let ua = navigator.userAgent;
-    if (ua.search(/Chrome/) > 0) return 'Google Chrome';
-    if (ua.search(/Firefox/) > 0) return 'Firefox' + navigator.appVersion;
-    if (ua.search(/Opera/) > 0) return 'Opera';
-    if (ua.search(/Safari/) > 0) return 'Safari';
-    if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+    if (ua.search(/Chrome/) > 0) return 'Google Chrome' + " " + parseInt(navigator.appVersion) ;
+    if (ua.search(/Firefox/) > 0) return 'Firefox' + " " + parseInt(navigator.appVersion);
+    if (ua.search(/Opera/) > 0) return 'Opera' + " " + parseInt(navigator.appVersion);
+    if (ua.search(/Safari/) > 0) return 'Safari' + " " + parseInt(navigator.appVersion);
+    if (ua.search(/MSIE/) > 0) return 'Internet Explorer' + " " + parseInt(navigator.appVersion);
     return 'Не определен';
 }
-let browser = get_name_browser();
+let browser = nameBrowser();
 let browserInfo = document.querySelector(".browsers-info")
     browserInfo.textContent = browser
+//Задание 7
+const anchors = document.querySelectorAll('a[href*="#"]')
+    anchors.forEach(link => {
+        link.addEventListener("click" , function(e){
+            e.preventDefault()
+        const href = this.getAttribute("href").substring(1)
+            if(!href) return
+        const scrollElem = document.getElementById(href)
+            let topOffset = 100
+            let elem = scrollElem.getBoundingClientRect().top
+            let offsetTop = elem - topOffset
+            window.scrollBy({
+                top:offsetTop,
+                behavior:"smooth"
+            })
+        })
+    })

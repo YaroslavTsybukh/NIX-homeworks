@@ -1,0 +1,18 @@
+$black: #222121
+$white: #fffefe
+$red: #f80202
+$lightBlue: #2e35a0
+
+$status-color: (header:$lightBlue, main:$black , form:$white)
+.dark
+  @each $status , $color in $status-color
+    &-#{$status}
+      background-color: $color
+    &-h2
+      color: $white
+    &-accordion
+      border: 2px solid $red
+    &-footer
+      background: linear-gradient(to top, #b88989, $lightBlue)
+    &-toggler
+      border-color: $black !important

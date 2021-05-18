@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Homework with Bootstrap</title>
+    <title>JS события</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css.map">
@@ -34,6 +34,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="#information">Информация</a>
+                                    <a class="dropdown-item" href="js page.html">Js страница</a>
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -41,6 +42,14 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#form-section">Связь с нами</a>
+                            </li>
+                            <li class="nav-item ml-lg-5 mt-lg-1">
+                                <input type="checkbox" class="checkbox" id="check">
+                                <label class="label" for="check">
+                                    <i class="fas fa-moon"></i>
+                                    <i class="fas fa-sun"></i>
+                                    <div class="ball"></div>
+                                </label>
                             </li>
                         </ul>
                     </div>
@@ -177,12 +186,12 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col-lg-6 mx-auto">
-                    <form action="#">
+                    <form action="alert.html">
                         <fieldset>
                             <legend>Мы рады ответить на все вопросы!</legend>
                             <div class="form-group">
                                 <label for="exampleInputName1">Имя</label>
-                                <input type="text" pattern="^[А-Яа-яЁё\s]+$" title="Введите любое слово на русском , включая пробелы" class="form-control" id="exampleInputName1" placeholder="Введите имя" required>
+                                <input type="text" name="name" title="Введите любое слово на русском , включая пробелы" class="form-control input-first" id="exampleInputName1" placeholder="Введите имя" >
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email</label>
@@ -212,8 +221,8 @@
                                     </button>
                                 </div>
                                 <div class="modal-footer justify-content-center">
-                                    <button type="button" class="btn btn-success">Да</button>
-                                    <button type="button" class="btn btn-warning">Нет</button>
+                                    <button type="submit" class="btn btn-success">Да</button>
+                                    <button type="button" class="btn btn-warning" data-dismiss="modal">Нет</button>
                                 </div>
                             </div>
                         </div>
@@ -268,5 +277,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 </body>
 </html>
