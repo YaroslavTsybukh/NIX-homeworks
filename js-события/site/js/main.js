@@ -48,7 +48,7 @@ function validateInput(validate, error, field) {
 }
 
 firstInput.addEventListener('input', (e) => {
-    const validate = e.target.value.split("").some(latter =>  latter.trim() === "" ? false : !isNaN(latter))
+    const validate = e.target.value.split("").some(letter =>  letter.trim() === "" ? false : !isNaN(letter))
     const error = e.target.closest(".form-group").querySelector('.text-danger')
     const name = e.target.getAttribute('name')
 
