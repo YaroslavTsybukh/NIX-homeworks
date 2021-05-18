@@ -43,7 +43,7 @@
 //         const day = date.getDay()
 //         console.log(day || 7)
 //     }
-// dayOfWeek(2021,4,23)
+// dayOfWeek(2020,3,19)
 //Задание 4
 //     function wordFind(str){
 //         const arr = str.split(" ")

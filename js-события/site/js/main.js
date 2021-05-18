@@ -116,9 +116,9 @@ document.addEventListener("copy", function (e) {
     e.preventDefault()
     alert("Копирование запрещено")
 })
-// document.addEventListener("contextmenu",function(e){
-//     e.preventDefault()
-// })
+document.addEventListener("contextmenu",function(e){
+    e.preventDefault()
+})
 document.addEventListener("keydown", function (e) {
     if (e.code == "KeyU" && (e.ctrlKey || e.metaKey)) {
         e.preventDefault()
