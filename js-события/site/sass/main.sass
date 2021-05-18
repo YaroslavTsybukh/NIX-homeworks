@@ -9,7 +9,7 @@ $green: #1aac1a
 $blue: #0000ff
 %marginTop
   margin-top: 20px
-$correct-color: (input: 2px solid $green, textarea: 2px solid $green)
+
 $state-none: (hover: none , focus: none)
 $modifier-color: (red: $red , blue: $blue , green: $green)
 *
@@ -139,9 +139,6 @@ form
   padding: 24px
   @extend .block-slider
   @extend .carousel
-@each $correct , $color in $correct-color
-  #{$correct}:valid
-    border: $color
 input[type="file"]
   border: none
 .form-button
