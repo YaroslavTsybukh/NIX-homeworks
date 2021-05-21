@@ -1,5 +1,5 @@
 .container{
-    width: 1170px;
+    min-width: 500px;
     margin: 0 auto;
 }
 /*Первое задание */
