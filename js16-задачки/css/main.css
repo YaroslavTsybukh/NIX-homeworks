@@ -1,0 +1,14 @@
+form{
+    width: 300px;
+}
+legend ~ input {
+    width: 100%;
+}
+.task-eigth{
+    display: flex;
+}
+
+/*Задача про бургеры*/
+#hamburger-form > fieldset > div{
+ margin-bottom: 10px;   
+}
